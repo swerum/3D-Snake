@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6003587164961152950
+--- !u!114 &-6800919175606037803
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DesaturateMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 2e62fda8255e6421db62abe48be01e71, type: 3}
+  m_Name: FoodMaterial
+  m_Shader: {fileID: 4800000, guid: f7b67291eb95f40ffa4c6d5140d49c70, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -109,14 +109,15 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
-    - _Glossiness: 0
+    - _Glossiness: 2.93
     - _GlossyReflections: 0
+    - _HasSpecularHighlight: 1
     - _Metallic: 0
+    - _NumSteps: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Saturation: 2.34
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -126,8 +127,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.9622642, g: 0.8920337, b: 0.35857958, a: 1}
+    - _Color: {r: 0.22899605, g: 0.5849056, b: 0.27555013, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HighlightColor: {r: 1, g: 0.97685766, b: 0.7688679, a: 1}
+    - _LightDirection: {r: -1.510893, g: -5.66, b: -16.86, a: 0}
+    - _ShadowColor: {r: 0.8301887, g: 0.48110643, b: 0.1527234, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []

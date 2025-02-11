@@ -37,8 +37,8 @@ public class Snake : MonoBehaviour
         // set up floor
         float floorX = (fieldSize.x - 1) / 2.0f * blockSize;
         float floorY = (fieldSize.y - 1) / 2.0f * blockSize;
-        floorCube.transform.position = new Vector3(floorX, -blockSize / 2f, floorY);
-        floorCube.transform.localScale = new Vector3(fieldSize.x, 0.1f, fieldSize.y);
+        floorCube.transform.position = new Vector3(floorX, -blockSize / 2f - 1, floorY);
+        floorCube.transform.localScale = new Vector3(fieldSize.x, 1f, fieldSize.y);
         /** create body of size one */
         for (int i = 0; i < 3; i++)
         {

@@ -54,20 +54,24 @@ public class PostProcessRenderFeature : ScriptableRendererFeature
     class PostProcessRenderPass : ScriptableRenderPass
     {
         RTHandle m_CameraColorTarget;
+        RTHandle m_tempTexture;
+        RenderTextureDescriptor m_textureDescriptor;
 
         // store settings instead of material itself
-        PostProcessRenderFeature.CustomRenderPassSettings settings;
+        CustomRenderPassSettings settings;
 
         // name this what you want, it will be used to name the profile in frame debugger
-        const string profilingName = "SpeedLineRender-Pass";
+        const string profilingName = "Custom PostProcess";
 
 
-        public PostProcessRenderPass(PostProcessRenderFeature.CustomRenderPassSettings settings)
+        public PostProcessRenderPass(CustomRenderPassSettings settings)
         {
             // storing the settings allows you to add more features faster without having to boiler plate code,
             // also ensures that any changes made in the render feature reflect in the pass
             this.settings = settings;
             renderPassEvent = settings.renderPassEvent;
+            m_textureDescriptor = new RenderTextureDescriptor(Screen.width,
+                Screen.height, RenderTextureFormat.Default, 0);
 
             // create a new profiling sampler with are chosen name,
             // else you get just a generic "ScriptableRendererPass" name
@@ -83,18 +87,21 @@ public class PostProcessRenderFeature : ScriptableRendererFeature
         public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
         {
             ConfigureTarget(m_CameraColorTarget);
+
+            RenderingUtils.ReAllocateIfNeeded(ref m_tempTexture, m_textureDescriptor);
         }
 
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
             var cameraData = renderingData.cameraData;
-            if (cameraData.camera.cameraType != CameraType.Game)
-                return;
+            // if (cameraData.camera.cameraType != CameraType.Game) return;
 
             CommandBuffer cmd = CommandBufferPool.Get(nameof(PostProcessRenderPass));
             using (new ProfilingScope(cmd, profilingSampler))
             {
-                Blitter.BlitCameraTexture(cmd, m_CameraColorTarget, m_CameraColorTarget, settings.material, 0);
+                Blitter.BlitCameraTexture(cmd, m_CameraColorTarget, m_tempTexture, settings.material, 0);
+                Blitter.BlitCameraTexture(cmd, m_tempTexture, m_CameraColorTarget);
+                // Blitter.BlitCameraTexture(cmd, m_CameraColorTarget, m_CameraColorTarget, settings.material, 0);
             }
             context.ExecuteCommandBuffer(cmd);
             cmd.Clear();

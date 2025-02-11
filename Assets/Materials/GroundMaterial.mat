@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GroundMaterial
-  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: f7b67291eb95f40ffa4c6d5140d49c70, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -110,12 +110,15 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
-    - _Glossiness: 0
+    - _Glossiness: 10.2
     - _GlossyReflections: 0
     - _GridLineThickness: 0.003
     - _GridSize: 0.1
+    - _HasSpecularHighlight: 1
     - _Intensity: -2
+    - _LightIntensity: 5.94
     - _Metallic: 0
+    - _NumSteps: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -129,9 +132,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.629895, g: 0.8962264, b: 0.6480556, a: 1}
     - _Color: {r: 0.68907976, g: 0.8962264, b: 0.7119622, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GridColour: {r: 0.12589, g: 0.38679248, b: 0.13955343, a: 1}
+    - _HighlightColor: {r: 0.86256826, g: 0.9433962, b: 0.85884655, a: 1}
+    - _LightDirection: {r: -1.510893, g: -5.66, b: -16.86, a: 0}
+    - _ShadowColor: {r: 0.0045389733, g: 0.3207547, b: 0.071251884, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
