@@ -46,7 +46,9 @@ public class PostProcessRenderFeature : ScriptableRendererFeature
         {
             // Calling ConfigureInput with the ScriptableRenderPassInput.Color argument
             // ensures that the opaque texture is available to the Render Pass.
-            renderPass.ConfigureInput(ScriptableRenderPassInput.Color | ScriptableRenderPassInput.Depth | ScriptableRenderPassInput.Normal | ScriptableRenderPassInput.Motion);
+            // renderPass.ConfigureInput(ScriptableRenderPassInput.Color | ScriptableRenderPassInput.Depth | ScriptableRenderPassInput.Normal | ScriptableRenderPassInput.Motion);
+            renderPass.ConfigureInput(ScriptableRenderPassInput.Color);
+            renderPass.ConfigureInput(ScriptableRenderPassInput.Normal);
             renderPass.SetTarget(renderer.cameraColorTargetHandle);
         }
     }
