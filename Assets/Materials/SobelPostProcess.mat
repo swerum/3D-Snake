@@ -87,6 +87,7 @@ Material:
     - REQUIRE_DEPTH_TEXTURE: 1
     - REQUIRE_NORMAL_TEXTURE: 1
     - REQUIRE_OPAQUE_TEXTURE: 1
+    - _AddNoise: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -111,6 +112,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _NumSquiggles: 1.14
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -118,6 +120,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SquiggleIntensity: 0.73
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Strength: 2.34
@@ -127,6 +130,8 @@ Material:
     - _Tightening: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _x_Intensity: 0.51
+    - _y_Intensity: 0.79
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
