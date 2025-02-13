@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SnakeMaterial
+  m_Name: Toon_Blue
   m_Shader: {fileID: 4800000, guid: f7b67291eb95f40ffa4c6d5140d49c70, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -114,7 +114,7 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
-    - _Glossiness: 0
+    - _Glossiness: 1.99
     - _GlossyReflections: 0
     - _HasSpecularHighlight: 1
     - _Metallic: 0
