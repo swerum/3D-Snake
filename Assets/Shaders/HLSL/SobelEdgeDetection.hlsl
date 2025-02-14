@@ -30,6 +30,7 @@ static float sobelYMatrix[9] = {
 };
 
 void AddNoise_float(float2 UV, float NumSquiggles, float xIntensity, float yIntensity, out float2 Out) {
+    // Out = UV;
     NumSquiggles *= 10;
     float yNoise = sin(UV.y * NumSquiggles) + sin(UV.y * NumSquiggles *3)/2 + sin(UV.y*NumSquiggles*7)/3;
     float xNoise = sin(UV.x * NumSquiggles * 3) + sin(UV.x * NumSquiggles *5)/3 + sin(UV.x*NumSquiggles*6)/5;

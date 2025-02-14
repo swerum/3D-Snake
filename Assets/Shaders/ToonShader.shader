@@ -12,23 +12,29 @@ Shader "Custom/ToonShader"
         _HighlightColor ("Highlight Color", Color) = (1,1,1,1)
         _Glossiness ("Glossiness", Range(0.0, 10.0)) = 1
     }
+    
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Opaque" "RenderPipeline" = "UniversalPipeline"}
         LOD 100
 
+        HLSLINCLUDE
+        // #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+        ENDHLSL
+        
         Pass
         {
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
             // make fog work
             #pragma multi_compile_fog
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN
 
             #include "UnityCG.cginc"
             #include "HLSL/ToonShading.hlsl"
 
-            ENDCG
+            ENDHLSL
         }
 
         Pass {
@@ -42,6 +48,7 @@ Shader "Custom/ToonShader"
             #pragma vertex Vertex
             #pragma fragment Fragment
 
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "HLSL/ShadowCasterPass.hlsl"
             ENDHLSL
         }

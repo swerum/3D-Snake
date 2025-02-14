@@ -1,3 +1,4 @@
+
 struct appdata
 {
     float4 vertex : POSITION;
@@ -8,6 +9,8 @@ struct appdata
 struct v2f
 {
     float4 vertex : SV_POSITION;
+    // float4 positionCS  : SV_POSITION;
+    float4 shadowCoords : TEXCOORD3;
     float3 worldNormal : NORMAL;
     float2 uv : TEXCOORD0;
     float3 viewDir : TEXCOORD1;	
@@ -28,13 +31,19 @@ sampler2D _TextureNoise;
 float4 _TextureNoise_ST;
 
 
-v2f vert (appdata v)
+v2f vert (appdata v) 
 {
     v2f o;
     o.vertex = UnityObjectToClipPos(v.vertex);
     o.worldNormal = UnityObjectToWorldNormal(v.normal);		
     o.viewDir = WorldSpaceViewDir(v.vertex);
     o.uv = TRANSFORM_TEX(v.uv, _TextureNoise);
+
+    // //Shadows
+    // VertexPositionInputs positions = GetVertexPositionInputs(v.vertex.xyz);
+    // float4 shadowCoordinates = GetShadowCoord(positions);
+    // o.shadowCoords = shadowCoordinates;
+
     return o;
 }
 
