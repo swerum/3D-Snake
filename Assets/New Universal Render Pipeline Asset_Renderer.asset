@@ -16,6 +16,22 @@ MonoBehaviour:
   settings:
     material: {fileID: 2100000, guid: 01c41bef006264f4aad1be344eb5d44d, type: 2}
     renderPassEvent: 600
+--- !u!114 &-7548087707257865111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85107f6352dbb41138d90e8755e10d35, type: 3}
+  m_Name: PostProcessRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    material: {fileID: 2100000, guid: b480b19916bb349f8b6d21c70b485313, type: 2}
+    renderPassEvent: 600
 --- !u!114 &-7541158846614248026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,6 +67,61 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 3302065f671a8450b82c9ddf07426f3a, type: 3}
   - {fileID: 2800000, guid: 56a77a3e8d64f47b6afe9e3c95cb57d5, type: 3}
   m_Shader: {fileID: 4800000, guid: 0849e84e3d62649e8882e9d6f056a017, type: 3}
+--- !u!114 &-6575552600775845283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6413f5ed7ad748b8bb90b998ed5dc89, type: 3}
+  m_Name: PostEffectFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  pass:
+    <renderPassEvent>k__BackingField: 600
+    m_ColorStoreActions: 0000000000000000000000000000000000000000000000000000000000000000
+    m_DepthStoreAction: 0
+    m_OverriddenColorStoreActions: 
+    m_OverriddenDepthStoreAction: 0
+    <overrideCameraTarget>k__BackingField: 0
+    <isBlitRenderPass>k__BackingField: 0
+    <useNativeRenderPass>k__BackingField: 1
+    <renderPassQueueIndex>k__BackingField: -1
+    <renderTargetFormat>k__BackingField: 0000000000000000000000000000000000000000000000000000000000000000
+    m_UsesRTHandles: 1
+    m_InputAttachmentIsTransient: 
+    m_Input: 0
+    m_ClearFlag: 0
+    m_ClearColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+    m_passMaterial: {fileID: 2100000, guid: 01c41bef006264f4aad1be344eb5d44d, type: 2}
+  m_effectMaterial: {fileID: 2100000, guid: 01c41bef006264f4aad1be344eb5d44d, type: 2}
+--- !u!114 &-3331754043330835646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d613f08f173d4dd895bb07b3230baa9, type: 3}
+  m_Name: FullScreenPassRendererFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: -1
+  passMaterial: {fileID: 2100000, guid: b480b19916bb349f8b6d21c70b485313, type: 2}
+  passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
 --- !u!114 &-2946455507955686575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,11 +168,9 @@ MonoBehaviour:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
-  - {fileID: 6804806197012682112}
-  - {fileID: -615106854867766789}
-  - {fileID: -2946455507955686575}
-  - {fileID: -7541158846614248026}
-  m_RendererFeatureMap: 805551ca2e876f5efbf1b21093b376f751e3ce9553161cd7a665c3d8fb6b5897
+  - {fileID: -7548087707257865111}
+  - {fileID: -3331754043330835646}
+  m_RendererFeatureMap: 69fc66c338ce3f97424b4b98593bc3d1
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}

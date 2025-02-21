@@ -101,9 +101,9 @@ public class PostProcessRenderFeature : ScriptableRendererFeature
             CommandBuffer cmd = CommandBufferPool.Get(nameof(PostProcessRenderPass));
             using (new ProfilingScope(cmd, profilingSampler))
             {
-                Blitter.BlitCameraTexture(cmd, m_CameraColorTarget, m_tempTexture, settings.material, 0);
-                Blitter.BlitCameraTexture(cmd, m_tempTexture, m_CameraColorTarget);
-                // Blitter.BlitCameraTexture(cmd, m_CameraColorTarget, m_CameraColorTarget, settings.material, 0);
+                // Blitter.BlitCameraTexture(cmd, m_CameraColorTarget, m_tempTexture, settings.material, 0);
+                // Blitter.BlitCameraTexture(cmd, m_tempTexture, m_CameraColorTarget);
+                Blitter.BlitCameraTexture(cmd, m_CameraColorTarget, m_CameraColorTarget, settings.material, 0);
             }
             context.ExecuteCommandBuffer(cmd);
             cmd.Clear();
